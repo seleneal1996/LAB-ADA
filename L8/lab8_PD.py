@@ -13,16 +13,22 @@ from numpy import random as rd
 def CuadraditosPD(M):
   m=len(M)
   n=len(M[0])
+  #la matriz dp es una matriz de ceros con una sola columna
+  # dp es para nuestro cont 
   dp= [0]*(n+1)
+  # creamos variables 
   Mmin=0 
   cont=0
+  # recorremos filas y cols de matrix
   for i in range(m):
     for j in range(n):
+      #la matriz m[i] [j] aqui vale 1 
       if M[i][j]!=0:
         cont+=1
         Mmin=(M[i-1][j]>M[i-1][j-1]) if M[i-1][j-1] else M[i-1][j]
         Mmin=(M[i][j-1]>Mmin) if Mmin else M[i][j-1]
         M[i][j]=Mmin+1
+      #Para un  matriz cuadrada 
       for cont in range(2,Mmin+1):
         dp[cont]+=1
   print('Hay:',cont,'cuadrado de:',1,'x',1)
@@ -31,10 +37,9 @@ def CuadraditosPD(M):
       print('Hay:',dp[i],'cuadrados de:',i,'x',i)
     else:
       print('Hay:',dp[i],'cuadrados de:',i,'x',i)
-
+#Matrix aleatoria llena de 1s y dimension 6*6
 a = rd.randint(1,2,(6,6)) 
 print(a)
-
 i=int(input('Ingrese cordenada i:'))
 j=int(input('Ingrese cordenada j:'))
 b=a[i:,:j]
