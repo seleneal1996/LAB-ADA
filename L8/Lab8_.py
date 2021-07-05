@@ -1,3 +1,5 @@
+#BARRIOS CORNEJO SELENE
+#LAB 8
 import numpy as np
 from numpy import random as rd
 def Cuadraditos(M):
