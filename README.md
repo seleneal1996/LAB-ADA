@@ -1,2 +1,2 @@
-# Laboratorio ADA unu 
+# Laboratorio ADA
 (>‿◠)✌ 
